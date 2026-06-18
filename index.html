@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Autoniq — Business AI Automation | Automate. Accelerate. Achieve.</title>
+  <meta name="description"
+    content="Autoniq deploys AI automation across your daily operations, handling the repetitive tasks that drain your team so you save hours every week and focus on growth." />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <meta property="og:title" content="Autoniq — Business AI Automation" />
+  <meta property="og:description" content="Automate repetitive work. Accelerate your business. Achieve more." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Announcement bar -->
+  <div class="announce" id="announce">
+    <div class="container announce-inner">
+      <p><span class="announce-badge">New</span> Autoniq AI Agents automate entire workflows, not just single tasks.
+        <a href="#features">Explore agents <span aria-hidden="true">→</span></a>
+      </p>
+      <button class="announce-close" id="announceClose" aria-label="Dismiss announcement">×</button>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="#home" class="brand" aria-label="Autoniq home">
+        <img src="assets/autoniq-wordmark.png" alt="Autoniq" class="brand-logo" />
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Primary">
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#how" class="nav-link">How it works</a>
+        <a href="#solutions" class="nav-link">Solutions</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+        <div class="nav-cta">
+          <a href="#contact" class="btn btn-ghost">Sign in</a>
+          <a href="#contact" class="btn btn-primary">Book a demo</a>
+        </div>
+      </nav>
+
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="theme-icon icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="5" />
+          <path
+            d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+        </svg>
+        <svg class="theme-icon icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" />
+        </svg>
+      </button>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <div class="nav-backdrop" id="navBackdrop"></div>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+        <div class="grid-lines"></div>
+      </div>
+      <div class="container hero-inner">
+        <div class="hero-copy" data-reveal>
+          <span class="eyebrow"><span class="dot"></span> Business AI Automation</span>
+          <h1 class="hero-title">Automate the busywork.<br /><span class="grad-text">Accelerate</span> your business.
+          </h1>
+          <p class="hero-sub">Autoniq puts your repetitive daily tasks on autopilot. Our AI handles the
+            data entry, follow-ups, and reporting that drain your team — so you save hours every week
+            and focus on the work that actually grows the business.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary btn-lg">Book a free demo</a>
+            <a href="#how" class="btn btn-secondary btn-lg">
+              <svg viewBox="0 0 24 24" class="ic" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none" />
+              </svg>
+              See how it works
+            </a>
+          </div>
+          <ul class="hero-trust">
+            <li><svg viewBox="0 0 24 24" class="ic-check" aria-hidden="true">
+                <path d="M5 12l4 4 10-10" />
+              </svg> No credit card</li>
+            <li><svg viewBox="0 0 24 24" class="ic-check" aria-hidden="true">
+                <path d="M5 12l4 4 10-10" />
+              </svg> 14-day pilot</li>
+            <li><svg viewBox="0 0 24 24" class="ic-check" aria-hidden="true">
+                <path d="M5 12l4 4 10-10" />
+              </svg> Setup in days</li>
+          </ul>
+        </div>
+
+        <!-- Product mockup -->
+        <div class="hero-app" data-reveal data-reveal-delay="120">
+          <div class="app-window">
+            <div class="app-bar">
+              <span class="app-dots"><i></i><i></i><i></i></span>
+              <span class="app-url">app.autoniq.ai/automations</span>
+            </div>
+            <div class="app-body">
+              <aside class="app-side">
+                <img src="assets/autoniq-mark.png" alt="" class="app-mark" />
+                <span class="app-ic is-active"></span>
+                <span class="app-ic"></span>
+                <span class="app-ic"></span>
+                <span class="app-ic"></span>
+              </aside>
+              <div class="app-main">
+                <div class="app-head">
+                  <div>
+                    <p class="app-eyebrow">Automation overview</p>
+                    <h3>Good morning, team</h3>
+                  </div>
+                  <span class="pill pill-live"><i></i> Live</span>
+                </div>
+                <div class="app-kpis">
+                  <div class="kpi">
+                    <span class="kpi-label">Hours saved</span>
+                    <span class="kpi-value">12.4<small>h</small></span>
+                    <span class="kpi-trend up">+18%</span>
+                  </div>
+                  <div class="kpi">
+                    <span class="kpi-label">Tasks automated</span>
+                    <span class="kpi-value">248</span>
+                    <span class="kpi-trend up">+32</span>
+                  </div>
+                  <div class="kpi">
+                    <span class="kpi-label">Accuracy</span>
+                    <span class="kpi-value">99.2<small>%</small></span>
+                    <span class="kpi-trend up">+0.4</span>
+                  </div>
+                </div>
+                <div class="app-chart" aria-hidden="true">
+                  <span style="--h:42%"></span><span style="--h:58%"></span><span style="--h:48%"></span>
+                  <span style="--h:72%"></span><span style="--h:64%"></span><span style="--h:88%"></span>
+                  <span style="--h:76%"></span>
+                </div>
+                <ul class="app-flow">
+                  <li><span class="flow-dot run"></span> Invoice processing <em>Running</em></li>
+                  <li><span class="flow-dot ok"></span> Email triage <em>Active</em></li>
+                  <li><span class="flow-dot ok"></span> CRM lead sync <em>Active</em></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="float-card fc-1">
+            <span class="fc-ic green"><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12l4 4 10-10" />
+              </svg></span>
+            <div><strong>Task automated</strong><small>Invoice #2025 processed</small></div>
+          </div>
+          <div class="float-card fc-2">
+            <span class="fc-ic blue"><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 7v5l3 2" />
+                <circle cx="12" cy="12" r="9" />
+              </svg></span>
+            <div><strong>+12.4 hrs</strong><small>saved this week</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Logo cloud -->
+    <section class="cloud">
+      <div class="container">
+        <p class="cloud-label">Trusted by operations teams at fast-growing companies</p>
+        <div class="cloud-logos" data-reveal>
+          <span class="cloud-logo">Northwind</span>
+          <span class="cloud-logo">Lumen&shy;Labs</span>
+          <span class="cloud-logo">Vertex</span>
+          <span class="cloud-logo">Cobalt</span>
+          <span class="cloud-logo">Meridian</span>
+          <span class="cloud-logo">Apex&nbsp;Co</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+      <div class="container stats-grid">
+        <div class="stat" data-reveal>
+          <span class="stat-value"><span data-counter="12" data-suffix="+">0</span></span>
+          <span class="stat-label">Hours saved per employee each week</span>
+        </div>
+        <div class="stat" data-reveal data-reveal-delay="80">
+          <span class="stat-value"><span data-counter="90" data-suffix="%">0</span></span>
+          <span class="stat-label">Fewer manual errors across workflows</span>
+        </div>
+        <div class="stat" data-reveal data-reveal-delay="160">
+          <span class="stat-value"><span data-counter="3" data-suffix="x">0</span></span>
+          <span class="stat-label">Faster turnaround on routine tasks</span>
+        </div>
+        <div class="stat" data-reveal data-reveal-delay="240">
+          <span class="stat-value">24/7</span>
+          <span class="stat-label">Always-on automation that never sleeps</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="section benefits">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow"><span class="dot"></span> Why teams switch</span>
+          <h2 class="section-title">Less busywork. More breakthroughs.</h2>
+          <p class="section-sub">Repetitive tasks quietly eat entire days. Autoniq gives that time back to your
+            people so they can do the work that matters.</p>
+        </div>
+        <div class="benefit-grid">
+          <article class="benefit-card" data-reveal>
+            <span class="b-ic"><svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5l3 2" />
+              </svg></span>
+            <h3>Save 10+ hours a week</h3>
+            <p>Hand off data entry, follow-ups, scheduling and reporting to AI that works around the clock.</p>
+          </article>
+          <article class="benefit-card" data-reveal data-reveal-delay="100">
+            <span class="b-ic"><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6z" />
+                <path d="M9 12l2 2 4-4" />
+              </svg></span>
+            <h3>Cut costly errors</h3>
+            <p>AI validates every step with 99%+ accuracy, so nothing slips through the cracks again.</p>
+          </article>
+          <article class="benefit-card" data-reveal data-reveal-delay="200">
+            <span class="b-ic"><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 19V5" />
+                <path d="M4 19h16" />
+                <path d="M8 16l4-5 3 3 4-6" />
+              </svg></span>
+            <h3>Scale without hiring</h3>
+            <p>Handle five times the volume with the same team. Growth no longer means more overhead.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section features" id="features">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow"><span class="dot"></span> Capabilities</span>
+          <h2 class="section-title">Everything you need to automate operations</h2>
+          <p class="section-sub">One platform to connect your tools and let AI run the repetitive work end to end.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card" data-reveal>
+            <span class="f-ic"><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M13 2L4 14h7l-1 8 9-12h-7z" />
+              </svg></span>
+            <h3>Workflow Automation</h3>
+            <p>Build multi-step automations across all your tools — no code, no engineers required.</p>
+          </article>
+          <article class="feature-card" data-reveal data-reveal-delay="80">
+            <span class="f-ic"><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 2h8l4 4v16H6z" />
+                <path d="M14 2v4h4" />
+                <path d="M9 13h6M9 17h6" />
+              </svg></span>
+            <h3>Document AI</h3>
+            <p>Extract, classify and process invoices, forms and contracts in seconds with zero typing.</p>
+          </article>
+          <article class="feature-card" data-reveal data-reveal-delay="160">
+            <span class="f-ic"><svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <path d="M3 7l9 6 9-6" />
+              </svg></span>
+            <h3>Smart Inbox &amp; Email</h3>
+            <p>Auto-triage messages, draft on-brand replies and route requests to the right place instantly.</p>
+          </article>
+          <article class="feature-card" data-reveal>
+            <span class="f-ic"><svg viewBox="0 0 24 24" aria-hidden="true">
+                <ellipse cx="12" cy="6" rx="8" ry="3" />
+                <path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6" />
+                <path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6" />
+              </svg></span>
+            <h3>Data Sync &amp; Entry</h3>
+            <p>Keep your CRM, spreadsheets and databases perfectly in sync — automatically, in real time.</p>
+          </article>
+          <article class="feature-card" data-reveal data-reveal-delay="80">
+            <span class="f-ic"><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z" />
+                <path d="M8 9h8M8 12h5" />
+              </svg></span>
+            <h3>AI Support Agents</h3>
+            <p>Resolve common customer questions 24/7 and escalate the tricky ones to your team.</p>
+          </article>
+          <article class="feature-card" data-reveal data-reveal-delay="160">
+            <span class="f-ic"><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 19V5" />
+                <path d="M4 19h16" />
+                <rect x="7" y="11" width="3" height="5" />
+                <rect x="12" y="7" width="3" height="9" />
+                <rect x="17" y="13" width="3" height="3" />
+              </svg></span>
+            <h3>Reports &amp; Insights</h3>
+            <p>Generate recurring reports and live dashboards on autopilot — delivered before you ask.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section how" id="how">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow"><span class="dot"></span> How it works</span>
+          <h2 class="section-title">Automate in three simple steps</h2>
+          <p class="section-sub">No technical background needed. If you can describe the task, Autoniq can run it.</p>
+        </div>
+        <div class="steps">
+          <div class="step-line" aria-hidden="true"></div>
+          <article class="step" data-reveal>
+            <span class="step-num">1</span>
+            <h3>Connect your tools</h3>
+            <p>Plug Autoniq into the apps you already use — email, CRM, spreadsheets, docs and more.</p>
+          </article>
+          <article class="step" data-reveal data-reveal-delay="120">
+            <span class="step-num">2</span>
+            <h3>Train your AI</h3>
+            <p>Describe a repetitive task in plain English. Autoniq learns the steps and the rules.</p>
+          </article>
+          <article class="step" data-reveal data-reveal-delay="240">
+            <span class="step-num">3</span>
+            <h3>Save time, every day</h3>
+            <p>Your automations run 24/7 in the background while your team focuses on real growth.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solutions / tabs -->
+    <section class="section solutions" id="solutions">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow"><span class="dot"></span> Solutions</span>
+          <h2 class="section-title">Built for every team in your business</h2>
+          <p class="section-sub">From finance to support, Autoniq removes the manual work hiding in every department.
+          </p>
+        </div>
+
+        <div class="tabs" data-reveal>
+          <div class="tab-btns" role="tablist" aria-label="Solutions by team">
+            <button class="tab-btn is-active" role="tab" aria-selected="true" data-tab="finance">Finance</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="sales">Sales &amp; CRM</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="support">Support</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="ops">HR &amp; Ops</button>
+          </div>
+
+          <div class="tab-panels">
+            <div class="tab-panel is-active" data-panel="finance">
+              <div class="tab-copy">
+                <h3>Close the books without the busywork</h3>
+                <p>Let AI handle invoice processing, reconciliation and approvals so finance can focus on strategy.</p>
+                <ul class="ticks">
+                  <li>Auto-process invoices &amp; receipts</li>
+                  <li>Reconcile transactions in real time</li>
+                  <li>Route expense approvals automatically</li>
+                  <li>Generate month-end reports on schedule</li>
+                </ul>
+              </div>
+              <div class="tab-visual">
+                <div class="mini-card">
+                  <div class="mini-row"><span>Invoice #2031</span><span class="tag green">Approved</span></div>
+                  <div class="mini-row"><span>Invoice #2032</span><span class="tag blue">Processing</span></div>
+                  <div class="mini-row"><span>Invoice #2033</span><span class="tag green">Approved</span></div>
+                  <div class="mini-bar"><i style="--w:84%"></i></div>
+                  <p class="mini-foot">84% processed automatically</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-panel" data-panel="sales">
+              <div class="tab-copy">
+                <h3>Keep your pipeline moving on autopilot</h3>
+                <p>Enrich leads, log activity and send timely follow-ups without lifting a finger.</p>
+                <ul class="ticks">
+                  <li>Auto-enrich new leads with firmographics</li>
+                  <li>Log calls, emails &amp; meetings to the CRM</li>
+                  <li>Trigger personalized follow-up sequences</li>
+                  <li>Update deal stages from real activity</li>
+                </ul>
+              </div>
+              <div class="tab-visual">
+                <div class="mini-card">
+                  <div class="mini-row"><span>New lead · Acme Inc.</span><span class="tag blue">Enriched</span></div>
+                  <div class="mini-row"><span>Follow-up sent</span><span class="tag green">Done</span></div>
+                  <div class="mini-row"><span>Deal moved → Demo</span><span class="tag green">Done</span></div>
+                  <div class="mini-bar"><i style="--w:71%"></i></div>
+                  <p class="mini-foot">71% faster lead response</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-panel" data-panel="support">
+              <div class="tab-copy">
+                <h3>Delight customers around the clock</h3>
+                <p>AI agents answer common questions instantly and hand off complex cases to your team.</p>
+                <ul class="ticks">
+                  <li>Resolve FAQs &amp; order status 24/7</li>
+                  <li>Auto-tag and prioritize tickets</li>
+                  <li>Draft replies in your brand voice</li>
+                  <li>Escalate edge cases with full context</li>
+                </ul>
+              </div>
+              <div class="tab-visual">
+                <div class="mini-card">
+                  <div class="mini-row"><span>Ticket #884 · Refund</span><span class="tag green">Resolved</span></div>
+                  <div class="mini-row"><span>Ticket #885 · Shipping</span><span class="tag green">Resolved</span></div>
+                  <div class="mini-row"><span>Ticket #886 · Billing</span><span class="tag amber">Escalated</span></div>
+                  <div class="mini-bar"><i style="--w:78%"></i></div>
+                  <p class="mini-foot">78% auto-resolved on first touch</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-panel" data-panel="ops">
+              <div class="tab-copy">
+                <h3>Onboard and operate effortlessly</h3>
+                <p>From new-hire paperwork to inventory updates, Autoniq runs the routine so people don't have to.</p>
+                <ul class="ticks">
+                  <li>Automate onboarding checklists</li>
+                  <li>Collect and file documents &amp; PTO</li>
+                  <li>Sync scheduling and inventory data</li>
+                  <li>Send reminders and status updates</li>
+                </ul>
+              </div>
+              <div class="tab-visual">
+                <div class="mini-card">
+                  <div class="mini-row"><span>Onboard · J. Rivera</span><span class="tag blue">In progress</span></div>
+                  <div class="mini-row"><span>Docs collected</span><span class="tag green">Done</span></div>
+                  <div class="mini-row"><span>Accounts provisioned</span><span class="tag green">Done</span></div>
+                  <div class="mini-bar"><i style="--w:90%"></i></div>
+                  <p class="mini-foot">90% of setup handled automatically</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Integrations -->
+    <section class="section integrations">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow"><span class="dot"></span> Integrations</span>
+          <h2 class="section-title">Works with the tools you already use</h2>
+          <p class="section-sub">Autoniq connects to your stack in minutes — no migration, no disruption.</p>
+        </div>
+        <div class="int-grid" data-reveal>
+          <span class="int-chip">Slack</span>
+          <span class="int-chip">Gmail</span>
+          <span class="int-chip">Sheets</span>
+          <span class="int-chip">Salesforce</span>
+          <span class="int-chip">HubSpot</span>
+          <span class="int-chip">Notion</span>
+          <span class="int-chip">QuickBooks</span>
+          <span class="int-chip">Outlook</span>
+          <span class="int-chip">Shopify</span>
+          <span class="int-chip">Stripe</span>
+          <span class="int-chip">Zapier</span>
+          <span class="int-chip">Teams</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section testimonials">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow"><span class="dot"></span> Customer stories</span>
+          <h2 class="section-title">Teams get their time back with Autoniq</h2>
+        </div>
+        <div class="quote-grid">
+          <figure class="quote" data-reveal>
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <blockquote>"Autoniq replaced hours of daily copy-paste work. Our ops team saves two full days
+              every week and errors basically disappeared."</blockquote>
+            <figcaption>
+              <span class="avatar">SR</span>
+              <span><strong>Sara Rahman</strong><small>Head of Operations, Northwind</small></span>
+            </figcaption>
+          </figure>
+          <figure class="quote" data-reveal data-reveal-delay="100">
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <blockquote>"We scaled order volume 4x without adding headcount. The AI agents handle the
+              repetitive support tickets so my team handles the humans."</blockquote>
+            <figcaption>
+              <span class="avatar">DK</span>
+              <span><strong>Daniel Kim</strong><small>COO, Cobalt</small></span>
+            </figcaption>
+          </figure>
+          <figure class="quote" data-reveal data-reveal-delay="200">
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <blockquote>"Setup took days, not months. Finance close that used to take a week now runs
+              mostly on its own. It paid for itself in the first month."</blockquote>
+            <figcaption>
+              <span class="avatar">MA</span>
+              <span><strong>Maria Alvarez</strong><small>Finance Director, Meridian</small></span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section pricing" id="pricing">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow"><span class="dot"></span> Pricing</span>
+          <h2 class="section-title">Simple pricing that scales with you</h2>
+          <p class="section-sub">Start with a free pilot. Upgrade only when automation is already saving you time.</p>
+          <div class="bill-toggle" data-reveal>
+            <span class="bill-opt is-active" id="billMonthly">Monthly</span>
+            <button class="switch" id="billSwitch" role="switch" aria-checked="false"
+              aria-label="Toggle annual billing"><span></span></button>
+            <span class="bill-opt" id="billAnnual">Annual <em>Save 20%</em></span>
+          </div>
+        </div>
+
+        <div class="price-grid">
+          <article class="price-card" data-reveal>
+            <h3 class="price-name">Starter</h3>
+            <p class="price-desc">For small teams automating their first workflows.</p>
+            <div class="price-amt"><span class="cur">$</span><span class="num" data-monthly="49"
+                data-annual="39">49</span><span class="per">/mo</span></div>
+            <p class="price-note" data-monthly-note="Billed monthly" data-annual-note="Billed annually">Billed monthly
+            </p>
+            <a href="#contact" class="btn btn-secondary btn-block">Start free pilot</a>
+            <ul class="ticks">
+              <li>Up to 5 active automations</li>
+              <li>2,000 tasks / month</li>
+              <li>Core integrations</li>
+              <li>Email support</li>
+            </ul>
+          </article>
+
+          <article class="price-card is-featured" data-reveal data-reveal-delay="100">
+            <span class="price-tag">Most popular</span>
+            <h3 class="price-name">Growth</h3>
+            <p class="price-desc">For scaling teams running automation across departments.</p>
+            <div class="price-amt"><span class="cur">$</span><span class="num" data-monthly="149"
+                data-annual="119">149</span><span class="per">/mo</span></div>
+            <p class="price-note" data-monthly-note="Billed monthly" data-annual-note="Billed annually">Billed monthly
+            </p>
+            <a href="#contact" class="btn btn-primary btn-block">Book a demo</a>
+            <ul class="ticks">
+              <li>Unlimited automations</li>
+              <li>25,000 tasks / month</li>
+              <li>All integrations + AI agents</li>
+              <li>Priority support &amp; onboarding</li>
+              <li>Advanced analytics</li>
+            </ul>
+          </article>
+
+          <article class="price-card" data-reveal data-reveal-delay="200">
+            <h3 class="price-name">Enterprise</h3>
+            <p class="price-desc">For large organizations with security &amp; scale needs.</p>
+            <div class="price-amt"><span class="num custom">Custom</span></div>
+            <p class="price-note">Tailored to your volume</p>
+            <a href="#contact" class="btn btn-secondary btn-block">Contact sales</a>
+            <ul class="ticks">
+              <li>Unlimited everything</li>
+              <li>SSO, SOC 2 &amp; data residency</li>
+              <li>Dedicated success manager</li>
+              <li>Custom integrations &amp; SLAs</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="trust-strip" data-reveal>
+          <span><svg viewBox="0 0 24 24" class="ic-check" aria-hidden="true">
+              <path d="M5 12l4 4 10-10" />
+            </svg> Bank-level encryption</span>
+          <span><svg viewBox="0 0 24 24" class="ic-check" aria-hidden="true">
+              <path d="M5 12l4 4 10-10" />
+            </svg> SOC 2 Type II</span>
+          <span><svg viewBox="0 0 24 24" class="ic-check" aria-hidden="true">
+              <path d="M5 12l4 4 10-10" />
+            </svg> GDPR compliant</span>
+          <span><svg viewBox="0 0 24 24" class="ic-check" aria-hidden="true">
+              <path d="M5 12l4 4 10-10" />
+            </svg> 99.9% uptime</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq" id="faq">
+      <div class="container faq-inner">
+        <div class="section-head align-left" data-reveal>
+          <span class="eyebrow"><span class="dot"></span> FAQ</span>
+          <h2 class="section-title">Questions, answered</h2>
+          <p class="section-sub">Everything you need to know before your first automation goes live.</p>
+        </div>
+        <div class="accordion" data-reveal>
+          <div class="acc-item">
+            <button class="acc-q" aria-expanded="false">What kind of tasks can Autoniq automate?
+              <span class="acc-ic" aria-hidden="true"></span></button>
+            <div class="acc-a">
+              <p>Any repetitive, rule-based work — data entry, invoice processing, email triage,
+                report generation, CRM updates, onboarding steps and more. If your team does it the same
+                way every time, Autoniq can run it.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-q" aria-expanded="false">Do I need coding or technical skills?
+              <span class="acc-ic" aria-hidden="true"></span></button>
+            <div class="acc-a">
+              <p>No. You describe the task in plain English and Autoniq builds the automation.
+                Our team also helps configure your first workflows during onboarding.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-q" aria-expanded="false">How long does setup take?
+              <span class="acc-ic" aria-hidden="true"></span></button>
+            <div class="acc-a">
+              <p>Most teams are live within a few days. Simple automations can be running the
+                same afternoon you connect your tools.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-q" aria-expanded="false">Is my data secure?
+              <span class="acc-ic" aria-hidden="true"></span></button>
+            <div class="acc-a">
+              <p>Yes. Autoniq uses bank-level encryption in transit and at rest, is SOC 2 Type II
+                audited and GDPR compliant. Your data is never used to train shared models.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-q" aria-expanded="false">Which tools does Autoniq integrate with?
+              <span class="acc-ic" aria-hidden="true"></span></button>
+            <div class="acc-a">
+              <p>Hundreds — including Gmail, Outlook, Slack, Salesforce, HubSpot, Notion, Google
+                Sheets, QuickBooks, Stripe, Shopify and Zapier. Need something custom? Enterprise plans add
+                bespoke integrations.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-q" aria-expanded="false">Can I cancel anytime?
+              <span class="acc-ic" aria-hidden="true"></span></button>
+            <div class="acc-a">
+              <p>Absolutely. Plans are month-to-month with no lock-in, and you can start with a
+                free 14-day pilot to prove the value first.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contact">
+      <div class="cta-bg" aria-hidden="true">
+        <div class="glow glow-3"></div>
+      </div>
+      <div class="container cta-inner" data-reveal>
+        <img src="assets/autoniq-mark-white.png" alt="" class="cta-mark" />
+        <h2>Ready to put your busywork on autopilot?</h2>
+        <p>Book a free demo and see exactly how many hours Autoniq can give back to your team — in under 30 minutes.</p>
+        <form class="cta-form" id="ctaForm" novalidate>
+          <input type="email" name="email" placeholder="Enter your work email" aria-label="Work email" required />
+          <button type="submit" class="btn btn-primary btn-lg">Book a free demo</button>
+        </form>
+        <p class="cta-fine" id="ctaMsg">No credit card required · 14-day pilot · Cancel anytime</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="foot-brand">
+        <img src="assets/autoniq-wordmark-white.png" alt="Autoniq" class="foot-logo" />
+        <p>Business AI automation that handles the repetitive work — so your team can automate, accelerate and achieve
+          more.</p>
+        <div class="socials">
+          <a href="#" aria-label="LinkedIn" class="soc"><svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M6.94 7.5A1.94 1.94 0 1 1 3.06 7.5a1.94 1.94 0 0 1 3.88 0zM3.5 9.5h2.9V21H3.5zM9.5 9.5h2.78v1.57h.04c.39-.74 1.34-1.52 2.76-1.52 2.95 0 3.5 1.94 3.5 4.46V21h-2.9v-5.1c0-1.22-.02-2.78-1.7-2.78-1.7 0-1.96 1.33-1.96 2.7V21H9.5z"
+                fill="currentColor" stroke="none" />
+            </svg></a>
+          <a href="#" aria-label="X" class="soc"><svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M17.5 3h3l-7 8 8.2 10h-6.4l-5-6.1L8 21H5l7.4-8.5L4.5 3H11l4.5 5.6zM16.3 19.2h1.7L8 4.7H6.2z"
+                fill="currentColor" stroke="none" />
+            </svg></a>
+          <a href="#" aria-label="GitHub" class="soc"><svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.94.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"
+                fill="currentColor" stroke="none" />
+            </svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Product</h4>
+        <a href="#features">Features</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#how">How it works</a>
+        <a href="#faq">Security</a>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Careers</a>
+        <a href="#">Blog</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h4>Resources</h4>
+        <a href="#">Documentation</a>
+        <a href="#">Help center</a>
+        <a href="#">API reference</a>
+        <a href="#">System status</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> Autoniq. All rights reserved.</p>
+      <p class="foot-tag">Automate. Accelerate. Achieve.</p>
+      <div class="foot-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
