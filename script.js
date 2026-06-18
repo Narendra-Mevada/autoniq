@@ -204,17 +204,48 @@
     ctaForm.addEventListener("submit", function (e) {
       e.preventDefault();
       var input = ctaForm.querySelector("input[type=email]");
+      var submitBtn = ctaForm.querySelector("button[type=submit]");
       var val = (input.value || "").trim();
       var ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
       if (!ok) {
         ctaMsg.textContent = "Please enter a valid work email.";
         ctaMsg.classList.remove("ok");
+        ctaMsg.classList.add("error");
         input.focus();
         return;
       }
-      ctaMsg.textContent = "Thanks! We'll reach out to " + val + " to schedule your demo.";
-      ctaMsg.classList.add("ok");
-      ctaForm.reset();
+
+      // Disable button and show loading state
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
+      ctaMsg.textContent = "";
+      ctaMsg.classList.remove("ok", "error");
+
+      fetch("https://n8n.bcap.tech/webhook/book-demo", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          email: val
+        })
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error("Request failed");
+          ctaMsg.textContent = "Thanks! We'll reach out to " + val + " to schedule your demo.";
+          ctaMsg.classList.add("ok");
+          ctaMsg.classList.remove("error");
+          ctaForm.reset();
+        })
+        .catch(function () {
+          ctaMsg.textContent = "Something went wrong. Please try again.";
+          ctaMsg.classList.add("error");
+          ctaMsg.classList.remove("ok");
+        })
+        .finally(function () {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Book a free demo";
+        });
     });
   }
 })();
