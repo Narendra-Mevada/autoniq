@@ -62,6 +62,10 @@
   function applyTheme(theme) {
     root.setAttribute("data-theme", theme);
     localStorage.setItem(STORAGE_KEY, theme);
+    // Redraw workflow wires after theme change to keep dots aligned
+    setTimeout(function () {
+      if (window._autoniqDrawWires) window._autoniqDrawWires();
+    }, 50);
   }
 
   applyTheme(getPreferred());
@@ -313,6 +317,8 @@
         paths[i].setAttribute("d", d);
       });
     }
+    // Expose for theme-change redraw
+    window._autoniqDrawWires = drawWires;
 
     // ---- dragging ----
     var active = null, startX = 0, startY = 0, origL = 0, origT = 0, moved = false;

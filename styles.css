@@ -2064,6 +2064,12 @@ h4 {
   transition-duration: .3s;
 }
 
+/* Exclude workflow SVG wires from blanket transition — prevents animation drift */
+[data-theme="dark"] .wf-wires,
+[data-theme="dark"] .wf-wires * {
+  transition-duration: 0s !important;
+}
+
 /* Header */
 [data-theme="dark"] .header {
   background: rgba(11, 18, 34, .82);
@@ -3391,10 +3397,21 @@ body.is-loading {
 
 [data-theme="dark"] .wf-port {
   background: #16223c;
+  border-color: rgba(43, 127, 255, .35);
+}
+
+[data-theme="dark"] .wf-node.active .wf-port {
+  border-color: var(--accent);
+  background: var(--accent);
 }
 
 [data-theme="dark"] .wf-wires path {
-  stroke: rgba(255, 255, 255, .14);
+  stroke: rgba(255, 255, 255, .30);
+}
+
+[data-theme="dark"] .wf-wires path.lit {
+  stroke: var(--accent);
+  filter: drop-shadow(0 0 4px rgba(43, 127, 255, .6));
 }
 
 @media (max-width: 720px) {
