@@ -137,9 +137,13 @@
     document.body.style.overflow = open ? "hidden" : "";
   }
   if (menuToggle) {
+    var navClose = document.getElementById("navClose");
     menuToggle.addEventListener("click", function () {
       setMenu(!nav.classList.contains("open"));
     });
+    if (navClose) {
+      navClose.addEventListener("click", function () { setMenu(false); });
+    }
     backdrop.addEventListener("click", function () { setMenu(false); });
     nav.querySelectorAll("a").forEach(function (a) {
       a.addEventListener("click", function () { setMenu(false); });
