@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"require\\('fs'\\).readFileSync\\('index.html','utf8'\\)\")",
+      "Bash(node -e \"require\\('child_process'\\)\")",
+      "Bash(node -c styles.css)",
+      "Bash(python3 -c ' *)",
+      "Bash(node -e ' *)",
+      "mcp__Claude_Preview__preview_start",
+      "WebFetch(domain:www.mountsmy.com)",
+      "WebFetch(domain:theaiautomationagency.ai)",
+      "WebFetch(domain:www.xaneur.com)"
+    ]
+  }
+}
