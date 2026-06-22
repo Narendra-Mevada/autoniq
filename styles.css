@@ -313,10 +313,6 @@ h4 {
   gap: 4px;
 }
 
-.nav-close {
-  display: none;
-}
-
 .nav-link {
   font-family: var(--font-display);
   font-weight: 600;
@@ -2483,21 +2479,6 @@ h4 {
     transform: translateX(100%);
     transition: transform .35s cubic-bezier(.2, .7, .2, 1);
     z-index: 48;
-  }
-
-  .nav-close {
-    display: flex;
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    width: 44px;
-    height: 44px;
-    align-items: center;
-    justify-content: center;
-    font-size: 36px;
-    color: var(--heading);
-    border-radius: 8px;
-    background: transparent;
   }
 
   .nav.open {
