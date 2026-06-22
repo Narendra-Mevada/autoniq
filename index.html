@@ -19,10 +19,28 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <noscript><style>[data-reveal]{opacity:1!important;transform:none!important;transition:none!important}.loader{display:none!important}</style></noscript>
+  <noscript>
+    <style>
+      [data-reveal] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important
+      }
+
+      .loader {
+        display: none !important
+      }
+    </style>
+  </noscript>
   <style>
     /* Safety net: if JS reveal hasn't fired after 6s, show everything */
-    @keyframes force-reveal { to { opacity: 1; transform: none; } }
+    @keyframes force-reveal {
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
     .reveal-fallback [data-reveal]:not(.in) {
       animation: force-reveal 0s 6s forwards;
     }
@@ -829,17 +847,17 @@
   <script src="script.js"></script>
   <!-- Emergency fallback: if script.js fails to load or errors out -->
   <script>
-    (function(){
+    (function () {
       // Force-reveal all hidden sections after 2 seconds
-      setTimeout(function(){
+      setTimeout(function () {
         var els = document.querySelectorAll('[data-reveal]:not(.in)');
-        for(var i=0;i<els.length;i++) els[i].classList.add('in');
+        for (var i = 0; i < els.length; i++) els[i].classList.add('in');
         // Dismiss loader if still showing
         var ldr = document.getElementById('loader');
-        if(ldr && ldr.parentNode){
+        if (ldr && ldr.parentNode) {
           ldr.classList.add('done');
           document.body.classList.remove('is-loading');
-          setTimeout(function(){ if(ldr.parentNode) ldr.parentNode.removeChild(ldr); },700);
+          setTimeout(function () { if (ldr.parentNode) ldr.parentNode.removeChild(ldr); }, 700);
         }
       }, 2000);
     })();
