@@ -827,6 +827,23 @@
   </footer>
 
   <script src="script.js"></script>
+  <!-- Emergency fallback: if script.js fails to load or errors out -->
+  <script>
+    (function(){
+      // Force-reveal all hidden sections after 2 seconds
+      setTimeout(function(){
+        var els = document.querySelectorAll('[data-reveal]:not(.in)');
+        for(var i=0;i<els.length;i++) els[i].classList.add('in');
+        // Dismiss loader if still showing
+        var ldr = document.getElementById('loader');
+        if(ldr && ldr.parentNode){
+          ldr.classList.add('done');
+          document.body.classList.remove('is-loading');
+          setTimeout(function(){ if(ldr.parentNode) ldr.parentNode.removeChild(ldr); },700);
+        }
+      }, 2000);
+    })();
+  </script>
 </body>
 
 </html>
