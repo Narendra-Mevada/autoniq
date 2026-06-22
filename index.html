@@ -22,11 +22,29 @@
 </head>
 
 <body>
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-grid" aria-hidden="true"></div>
+    <div class="loader-inner">
+      <div class="loader-mark">
+        <span class="loader-spin"></span>
+        <svg class="loader-bolt" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M13 2L4 14h7l-1 8 9-12h-7z" />
+        </svg>
+      </div>
+      <p class="loader-status" id="loaderStatus">Booting automation engine</p>
+      <div class="loader-bar">
+        <span id="loaderFill"></span>
+      </div>
+      <p class="loader-pct" id="loaderPct">0%</p>
+    </div>
+  </div>
+
   <!-- Announcement bar -->
   <div class="announce" id="announce">
     <div class="container announce-inner">
-      <p><span class="announce-badge">New</span> Autoniq AI Agents automate entire workflows, not just single tasks.
-        <a href="#features">Explore agents <span aria-hidden="true">→</span></a>
+      <p><span class="announce-badge">Early Access</span> We're onboarding our first automation partners now — limited pilot slots.
+        <a href="#contact">Reserve a slot <span aria-hidden="true">→</span></a>
       </p>
       <button class="announce-close" id="announceClose" aria-label="Dismiss announcement">×</button>
     </div>
@@ -67,6 +85,7 @@
     </div>
   </header>
   <div class="nav-backdrop" id="navBackdrop"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
 
   <main>
     <!-- Hero -->
@@ -85,7 +104,7 @@
             data entry, follow-ups, and reporting that drain your team — so you save hours every week
             and focus on the work that actually grows the business.</p>
           <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary btn-lg">Book a free demo</a>
+            <a href="#contact" class="btn btn-primary btn-lg btn-magnetic">Join early access</a>
             <a href="#how" class="btn btn-secondary btn-lg">
               <svg viewBox="0 0 24 24" class="ic" aria-hidden="true">
                 <circle cx="12" cy="12" r="9" />
@@ -100,78 +119,74 @@
               </svg> No credit card</li>
             <li><svg viewBox="0 0 24 24" class="ic-check" aria-hidden="true">
                 <path d="M5 12l4 4 10-10" />
-              </svg> 14-day pilot</li>
+              </svg> Free 14-day pilot</li>
             <li><svg viewBox="0 0 24 24" class="ic-check" aria-hidden="true">
                 <path d="M5 12l4 4 10-10" />
-              </svg> Setup in days</li>
+              </svg> Limited founding spots</li>
           </ul>
         </div>
 
-        <!-- Product mockup -->
+        <!-- Interactive automation workflow canvas -->
         <div class="hero-app" data-reveal data-reveal-delay="120">
-          <div class="app-window">
-            <div class="app-bar">
-              <span class="app-dots"><i></i><i></i><i></i></span>
-              <span class="app-url">app.autoniq.ai/automations</span>
+          <div class="wf-wrap">
+            <div class="wf-head">
+              <span class="wf-title"><i class="wf-live"></i> Live automation</span>
+              <button type="button" class="wf-run" id="wfRun">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5l12 7-12 7z" /></svg>
+                Run workflow
+              </button>
             </div>
-            <div class="app-body">
-              <aside class="app-side">
-                <img src="assets/autoniq-mark.png" alt="" class="app-mark" />
-                <span class="app-ic is-active"></span>
-                <span class="app-ic"></span>
-                <span class="app-ic"></span>
-                <span class="app-ic"></span>
-              </aside>
-              <div class="app-main">
-                <div class="app-head">
-                  <div>
-                    <p class="app-eyebrow">Automation overview</p>
-                    <h3>Good morning, team</h3>
-                  </div>
-                  <span class="pill pill-live"><i></i> Live</span>
+
+            <div class="wf-canvas" id="wfCanvas">
+              <svg class="wf-wires" id="wfWires" aria-hidden="true"></svg>
+
+              <div class="wf-node n-trigger" data-node="trigger" style="left:3%; top:8%;">
+                <span class="wf-tag tag-grey"><i class="dc-dot"></i> Trigger</span>
+                <div class="wf-body">
+                  <span class="wf-ic ic-trigger">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h7" /></svg>
+                  </span>
+                  <div><strong>New lead</strong><small>Webform</small></div>
                 </div>
-                <div class="app-kpis">
-                  <div class="kpi">
-                    <span class="kpi-label">Hours saved</span>
-                    <span class="kpi-value">12.4<small>h</small></span>
-                    <span class="kpi-trend up">+18%</span>
-                  </div>
-                  <div class="kpi">
-                    <span class="kpi-label">Tasks automated</span>
-                    <span class="kpi-value">248</span>
-                    <span class="kpi-trend up">+32</span>
-                  </div>
-                  <div class="kpi">
-                    <span class="kpi-label">Accuracy</span>
-                    <span class="kpi-value">99.2<small>%</small></span>
-                    <span class="kpi-trend up">+0.4</span>
-                  </div>
+                <i class="wf-port out"></i>
+              </div>
+
+              <div class="wf-node n-ai" data-node="ai" style="left:30%; top:42%;">
+                <span class="wf-tag tag-blue"><i class="dc-dot"></i> AI Engine</span>
+                <div class="wf-body">
+                  <span class="wf-ic ic-ai">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v3M12 18v3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M3 12h3M18 12h3M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1" /><circle cx="12" cy="12" r="3.4" /></svg>
+                  </span>
+                  <div><strong>Analyze &amp; draft</strong><small>Personalized reply</small></div>
                 </div>
-                <div class="app-chart" aria-hidden="true">
-                  <span style="--h:42%"></span><span style="--h:58%"></span><span style="--h:48%"></span>
-                  <span style="--h:72%"></span><span style="--h:64%"></span><span style="--h:88%"></span>
-                  <span style="--h:76%"></span>
+                <i class="wf-port in"></i>
+                <i class="wf-port out"></i>
+              </div>
+
+              <div class="wf-node n-crm" data-node="crm" style="left:62%; top:6%;">
+                <span class="wf-tag tag-green"><i class="dc-dot"></i> Action</span>
+                <div class="wf-body">
+                  <span class="wf-ic ic-crm">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10" /></svg>
+                  </span>
+                  <div><strong>Update CRM</strong><small>HubSpot</small></div>
                 </div>
-                <ul class="app-flow">
-                  <li><span class="flow-dot run"></span> Invoice processing <em>Running</em></li>
-                  <li><span class="flow-dot ok"></span> Email triage <em>Active</em></li>
-                  <li><span class="flow-dot ok"></span> CRM lead sync <em>Active</em></li>
-                </ul>
+                <i class="wf-port in"></i>
+              </div>
+
+              <div class="wf-node n-notify" data-node="notify" style="left:62%; top:66%;">
+                <span class="wf-tag tag-green"><i class="dc-dot"></i> Action</span>
+                <div class="wf-body">
+                  <span class="wf-ic ic-notify">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" /><path d="M13.7 21a2 2 0 0 1-3.4 0" /></svg>
+                  </span>
+                  <div><strong>Notify team</strong><small>Slack</small></div>
+                </div>
+                <i class="wf-port in"></i>
               </div>
             </div>
-          </div>
-          <div class="float-card fc-1">
-            <span class="fc-ic green"><svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M5 12l4 4 10-10" />
-              </svg></span>
-            <div><strong>Task automated</strong><small>Invoice #2025 processed</small></div>
-          </div>
-          <div class="float-card fc-2">
-            <span class="fc-ic blue"><svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 7v5l3 2" />
-                <circle cx="12" cy="12" r="9" />
-              </svg></span>
-            <div><strong>+12.4 hrs</strong><small>saved this week</small></div>
+
+            <p class="wf-hint">Drag the nodes — then hit <strong>Run</strong> ✦</p>
           </div>
         </div>
       </div>
@@ -180,36 +195,49 @@
     <!-- Logo cloud -->
     <section class="cloud">
       <div class="container">
-        <p class="cloud-label">Trusted by operations teams at fast-growing companies</p>
+        <p class="cloud-label">Built for the teams who hate repetitive work</p>
         <div class="cloud-logos" data-reveal>
-          <span class="cloud-logo">Northwind</span>
-          <span class="cloud-logo">Lumen&shy;Labs</span>
-          <span class="cloud-logo">Vertex</span>
-          <span class="cloud-logo">Cobalt</span>
-          <span class="cloud-logo">Meridian</span>
-          <span class="cloud-logo">Apex&nbsp;Co</span>
+          <div class="cloud-track">
+            <span class="cloud-logo">Finance</span>
+            <span class="cloud-logo">Sales&nbsp;&amp;&nbsp;CRM</span>
+            <span class="cloud-logo">Support</span>
+            <span class="cloud-logo">HR&nbsp;&amp;&nbsp;Ops</span>
+            <span class="cloud-logo">E-commerce</span>
+            <span class="cloud-logo">Agencies</span>
+          </div>
+          <div class="cloud-track" aria-hidden="true">
+            <span class="cloud-logo">Finance</span>
+            <span class="cloud-logo">Sales&nbsp;&amp;&nbsp;CRM</span>
+            <span class="cloud-logo">Support</span>
+            <span class="cloud-logo">HR&nbsp;&amp;&nbsp;Ops</span>
+            <span class="cloud-logo">E-commerce</span>
+            <span class="cloud-logo">Agencies</span>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Stats -->
     <section class="stats">
-      <div class="container stats-grid">
-        <div class="stat" data-reveal>
-          <span class="stat-value"><span data-counter="12" data-suffix="+">0</span></span>
-          <span class="stat-label">Hours saved per employee each week</span>
-        </div>
-        <div class="stat" data-reveal data-reveal-delay="80">
-          <span class="stat-value"><span data-counter="90" data-suffix="%">0</span></span>
-          <span class="stat-label">Fewer manual errors across workflows</span>
-        </div>
-        <div class="stat" data-reveal data-reveal-delay="160">
-          <span class="stat-value"><span data-counter="3" data-suffix="x">0</span></span>
-          <span class="stat-label">Faster turnaround on routine tasks</span>
-        </div>
-        <div class="stat" data-reveal data-reveal-delay="240">
-          <span class="stat-value">24/7</span>
-          <span class="stat-label">Always-on automation that never sleeps</span>
+      <div class="container">
+        <p class="stats-label" data-reveal>What early partners can expect</p>
+        <div class="stats-grid">
+          <div class="stat" data-reveal>
+            <span class="stat-value"><span data-counter="12" data-suffix="+">0</span></span>
+            <span class="stat-label">Target hours saved per employee each week</span>
+          </div>
+          <div class="stat" data-reveal data-reveal-delay="80">
+            <span class="stat-value"><span data-counter="90" data-suffix="%">0</span></span>
+            <span class="stat-label">Fewer manual errors across workflows</span>
+          </div>
+          <div class="stat" data-reveal data-reveal-delay="160">
+            <span class="stat-value"><span data-counter="3" data-suffix="x">0</span></span>
+            <span class="stat-label">Faster turnaround on routine tasks</span>
+          </div>
+          <div class="stat" data-reveal data-reveal-delay="240">
+            <span class="stat-value">24/7</span>
+            <span class="stat-label">Always-on automation that never sleeps</span>
+          </div>
         </div>
       </div>
     </section>
@@ -466,6 +494,41 @@
           <h2 class="section-title">Works with the tools you already use</h2>
           <p class="section-sub">Autoniq connects to your stack in minutes — no migration, no disruption.</p>
         </div>
+
+        <div class="flow-diagram" data-reveal aria-hidden="true">
+          <div class="flow-col flow-in">
+            <span class="flow-chip">Email</span>
+            <span class="flow-chip">CRM</span>
+            <span class="flow-chip">Sheets</span>
+          </div>
+          <div class="flow-wire">
+            <span class="flow-packet p1"></span>
+            <span class="flow-packet p2"></span>
+            <span class="flow-packet p3"></span>
+          </div>
+          <div class="flow-core">
+            <span class="core-ring"></span>
+            <span class="core-ring r2"></span>
+            <svg class="core-ic" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M13 2L4 14h7l-1 8 9-12h-7z" />
+            </svg>
+            <span class="core-label">AI Engine</span>
+          </div>
+          <div class="flow-wire">
+            <span class="flow-packet p1"></span>
+            <span class="flow-packet p2"></span>
+            <span class="flow-packet p3"></span>
+          </div>
+          <div class="flow-col flow-out">
+            <span class="flow-chip">Reports</span>
+            <span class="flow-chip">Alerts</span>
+            <span class="flow-chip">Tasks</span>
+          </div>
+        </div>
+        <p class="flow-caption" data-reveal>Your tools feed in, Autoniq's AI engine decides &amp; acts, results flow
+          straight back out — automatically, 24/7.</p>
+
         <div class="int-grid" data-reveal>
           <span class="int-chip">Slack</span>
           <span class="int-chip">Gmail</span>
@@ -487,37 +550,45 @@
     <section class="section testimonials">
       <div class="container">
         <div class="section-head" data-reveal>
-          <span class="eyebrow"><span class="dot"></span> Customer stories</span>
-          <h2 class="section-title">Teams get their time back with Autoniq</h2>
+          <span class="eyebrow"><span class="dot"></span> Founding partner program</span>
+          <h2 class="section-title">Be one of our first automation partners</h2>
+          <p class="section-sub">We're onboarding a small group of businesses for hands-on pilots before public
+            launch. Here's what's in it for you.</p>
         </div>
         <div class="quote-grid">
-          <figure class="quote" data-reveal>
-            <div class="stars" aria-hidden="true">★★★★★</div>
-            <blockquote>"Autoniq replaced hours of daily copy-paste work. Our ops team saves two full days
-              every week and errors basically disappeared."</blockquote>
-            <figcaption>
-              <span class="avatar">SR</span>
-              <span><strong>Sara Rahman</strong><small>Head of Operations, Northwind</small></span>
+          <article class="quote" data-reveal>
+            <span class="b-ic"><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z" />
+              </svg></span>
+            <blockquote>Direct access to our founders. Your workflows shape what we build next, and you get
+              priority support while we set things up together.</blockquote>
+            <figcaption class="figcaption-plain">
+              <strong>Founder-led onboarding</strong>
             </figcaption>
-          </figure>
-          <figure class="quote" data-reveal data-reveal-delay="100">
-            <div class="stars" aria-hidden="true">★★★★★</div>
-            <blockquote>"We scaled order volume 4x without adding headcount. The AI agents handle the
-              repetitive support tickets so my team handles the humans."</blockquote>
-            <figcaption>
-              <span class="avatar">DK</span>
-              <span><strong>Daniel Kim</strong><small>COO, Cobalt</small></span>
+          </article>
+          <article class="quote" data-reveal data-reveal-delay="100">
+            <span class="b-ic"><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6z" />
+                <path d="M9 12l2 2 4-4" />
+              </svg></span>
+            <blockquote>Free 14-day pilot on a real workflow of your choice, with no credit card and no
+              long-term commitment required to try it.</blockquote>
+            <figcaption class="figcaption-plain">
+              <strong>Risk-free pilot</strong>
             </figcaption>
-          </figure>
-          <figure class="quote" data-reveal data-reveal-delay="200">
-            <div class="stars" aria-hidden="true">★★★★★</div>
-            <blockquote>"Setup took days, not months. Finance close that used to take a week now runs
-              mostly on its own. It paid for itself in the first month."</blockquote>
-            <figcaption>
-              <span class="avatar">MA</span>
-              <span><strong>Maria Alvarez</strong><small>Finance Director, Meridian</small></span>
+          </article>
+          <article class="quote" data-reveal data-reveal-delay="200">
+            <span class="b-ic"><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 19V5" />
+                <path d="M4 19h16" />
+                <path d="M8 16l4-5 3 3 4-6" />
+              </svg></span>
+            <blockquote>Lock in founding-partner pricing now and keep it for as long as you stay on the
+              platform — even as we add features and raise prices later.</blockquote>
+            <figcaption class="figcaption-plain">
+              <strong>Locked-in early pricing</strong>
             </figcaption>
-          </figure>
+          </article>
         </div>
       </div>
     </section>
@@ -527,24 +598,18 @@
       <div class="container">
         <div class="section-head" data-reveal>
           <span class="eyebrow"><span class="dot"></span> Pricing</span>
-          <h2 class="section-title">Simple pricing that scales with you</h2>
-          <p class="section-sub">Start with a free pilot. Upgrade only when automation is already saving you time.</p>
-          <div class="bill-toggle" data-reveal>
-            <span class="bill-opt is-active" id="billMonthly">Monthly</span>
-            <button class="switch" id="billSwitch" role="switch" aria-checked="false"
-              aria-label="Toggle annual billing"><span></span></button>
-            <span class="bill-opt" id="billAnnual">Annual <em>Save 20%</em></span>
-          </div>
+          <h2 class="section-title">Founding partner pricing</h2>
+          <p class="section-sub">Start with a free pilot. Lock in early pricing now — it stays yours even after we
+            launch publicly.</p>
+
+
         </div>
 
         <div class="price-grid">
           <article class="price-card" data-reveal>
             <h3 class="price-name">Starter</h3>
             <p class="price-desc">For small teams automating their first workflows.</p>
-            <div class="price-amt"><span class="cur">$</span><span class="num" data-monthly="49"
-                data-annual="39">49</span><span class="per">/mo</span></div>
-            <p class="price-note" data-monthly-note="Billed monthly" data-annual-note="Billed annually">Billed monthly
-            </p>
+
             <a href="#contact" class="btn btn-secondary btn-block">Start free pilot</a>
             <ul class="ticks">
               <li>Up to 5 active automations</li>
@@ -555,14 +620,11 @@
           </article>
 
           <article class="price-card is-featured" data-reveal data-reveal-delay="100">
-            <span class="price-tag">Most popular</span>
+            <span class="price-tag">Founding favorite</span>
             <h3 class="price-name">Growth</h3>
             <p class="price-desc">For scaling teams running automation across departments.</p>
-            <div class="price-amt"><span class="cur">$</span><span class="num" data-monthly="149"
-                data-annual="119">149</span><span class="per">/mo</span></div>
-            <p class="price-note" data-monthly-note="Billed monthly" data-annual-note="Billed annually">Billed monthly
-            </p>
-            <a href="#contact" class="btn btn-primary btn-block">Book a demo</a>
+
+            <a href="#contact" class="btn btn-primary btn-block">Join early access</a>
             <ul class="ticks">
               <li>Unlimited automations</li>
               <li>25,000 tasks / month</li>
@@ -575,9 +637,8 @@
           <article class="price-card" data-reveal data-reveal-delay="200">
             <h3 class="price-name">Enterprise</h3>
             <p class="price-desc">For large organizations with security &amp; scale needs.</p>
-            <div class="price-amt"><span class="num custom">Custom</span></div>
-            <p class="price-note">Tailored to your volume</p>
-            <a href="#contact" class="btn btn-secondary btn-block">Contact sales</a>
+
+            <a href="#contact" class="btn btn-secondary btn-block" disabled>Unavailable for now</a>
             <ul class="ticks">
               <li>Unlimited everything</li>
               <li>SSO, SOC 2 &amp; data residency</li>
@@ -590,16 +651,16 @@
         <div class="trust-strip" data-reveal>
           <span><svg viewBox="0 0 24 24" class="ic-check" aria-hidden="true">
               <path d="M5 12l4 4 10-10" />
-            </svg> Bank-level encryption</span>
+            </svg> Encrypted in transit &amp; at rest</span>
           <span><svg viewBox="0 0 24 24" class="ic-check" aria-hidden="true">
               <path d="M5 12l4 4 10-10" />
-            </svg> SOC 2 Type II</span>
+            </svg> Built with GDPR principles</span>
           <span><svg viewBox="0 0 24 24" class="ic-check" aria-hidden="true">
               <path d="M5 12l4 4 10-10" />
-            </svg> GDPR compliant</span>
+            </svg> Your data is never used to train shared models</span>
           <span><svg viewBox="0 0 24 24" class="ic-check" aria-hidden="true">
               <path d="M5 12l4 4 10-10" />
-            </svg> 99.9% uptime</span>
+            </svg> Cancel anytime, no lock-in</span>
         </div>
       </div>
     </section>
@@ -642,8 +703,8 @@
             <button class="acc-q" aria-expanded="false">Is my data secure?
               <span class="acc-ic" aria-hidden="true"></span></button>
             <div class="acc-a">
-              <p>Yes. Autoniq uses bank-level encryption in transit and at rest, is SOC 2 Type II
-                audited and GDPR compliant. Your data is never used to train shared models.</p>
+              <p>Yes. Autoniq encrypts your data in transit and at rest and is built on GDPR
+                principles from day one. Your data is never used to train shared models.</p>
             </div>
           </div>
           <div class="acc-item">
@@ -674,11 +735,12 @@
       </div>
       <div class="container cta-inner" data-reveal>
         <img src="assets/autoniq-mark-white.png" alt="" class="cta-mark" />
-        <h2>Ready to put your busywork on autopilot?</h2>
-        <p>Book a free demo and see exactly how many hours Autoniq can give back to your team — in under 30 minutes.</p>
+        <h2>Be one of the first to put busywork on autopilot</h2>
+        <p>We're opening a limited number of founding-partner pilot slots. Drop your email and we'll reach out to
+          set up your free 14-day pilot — in under 30 minutes.</p>
         <form class="cta-form" id="ctaForm" novalidate>
           <input type="email" name="email" placeholder="Enter your work email" aria-label="Work email" required />
-          <button type="submit" class="btn btn-primary btn-lg">Book a free demo</button>
+          <button type="submit" class="btn btn-primary btn-lg">Join early access</button>
         </form>
         <p class="cta-fine" id="ctaMsg">No credit card required · 14-day pilot · Cancel anytime</p>
       </div>
