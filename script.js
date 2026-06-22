@@ -37,6 +37,15 @@
         }, 350);
       }
     }, 220);
+
+    /* Absolute failsafe: dismiss loader after 8s no matter what */
+    setTimeout(function () {
+      if (loader && loader.parentNode) {
+        loader.classList.add("done");
+        document.body.classList.remove("is-loading");
+        setTimeout(function () { if (loader.parentNode) loader.parentNode.removeChild(loader); }, 700);
+      }
+    }, 8000);
   }
 
   /* ---- Dark mode ---- */
@@ -153,6 +162,12 @@
   } else {
     revealEls.forEach(function (el) { el.classList.add("in"); });
   }
+
+  /* ---- Fallback: force-reveal everything after 4s if observer didn't fire ---- */
+  setTimeout(function () {
+    var hidden = document.querySelectorAll("[data-reveal]:not(.in)");
+    hidden.forEach(function (el) { el.classList.add("in"); });
+  }, 4000);
 
   /* ---- Animated counters ---- */
   var counters = document.querySelectorAll("[data-counter]");
@@ -621,7 +636,7 @@
         })
         .finally(function () {
           submitBtn.disabled = false;
-          submitBtn.textContent = "Book a free demo";
+          submitBtn.textContent = "Join early access";
         });
     });
   }
