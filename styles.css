@@ -2558,8 +2558,12 @@ h4 {
     padding: 48px 0 64px;
   }
 
+  .hero-actions {
+    flex-direction: column;
+  }
+
   .hero-actions .btn {
-    flex: 1;
+    width: 100%;
   }
 
   .app-kpis {
