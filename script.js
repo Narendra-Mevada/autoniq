@@ -202,23 +202,6 @@
     counters.forEach(function (el) { el.textContent = el.getAttribute("data-counter") + (el.getAttribute("data-suffix") || ""); });
   }
 
-  /* ---- Solutions tabs ---- */
-  var tabBtns = document.querySelectorAll(".tab-btn");
-  var tabPanels = document.querySelectorAll(".tab-panel");
-  tabBtns.forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      var key = btn.getAttribute("data-tab");
-      tabBtns.forEach(function (b) {
-        var active = b === btn;
-        b.classList.toggle("is-active", active);
-        b.setAttribute("aria-selected", active ? "true" : "false");
-      });
-      tabPanels.forEach(function (p) {
-        p.classList.toggle("is-active", p.getAttribute("data-panel") === key);
-      });
-    });
-  });
-
   /* ---- Pricing toggle ---- */
   var billSwitch = document.getElementById("billSwitch");
   var billMonthly = document.getElementById("billMonthly");
@@ -601,17 +584,30 @@
   if (ctaForm) {
     ctaForm.addEventListener("submit", function (e) {
       e.preventDefault();
-      var input = ctaForm.querySelector("input[type=email]");
       var submitBtn = ctaForm.querySelector("button[type=submit]");
-      var val = (input.value || "").trim();
-      var ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
-      if (!ok) {
-        ctaMsg.textContent = "Please enter a valid work email.";
+      function field(name) { return ctaForm.querySelector("[name=" + name + "]"); }
+      function showError(msg, el) {
+        ctaMsg.textContent = msg;
         ctaMsg.classList.remove("ok");
         ctaMsg.classList.add("error");
-        input.focus();
-        return;
+        if (el) el.focus();
       }
+
+      var data = {
+        name: (field("name").value || "").trim(),
+        email: (field("email").value || "").trim(),
+        phone: (field("phone").value || "").trim(),
+        business: (field("business").value || "").trim(),
+        state: (field("state").value || "").trim(),
+        city: (field("city").value || "").trim()
+      };
+
+      if (!data.name) { return showError("Please enter your name.", field("name")); }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) { return showError("Please enter a valid work email.", field("email")); }
+      if (data.phone.replace(/\D/g, "").length < 7) { return showError("Please enter a valid contact number.", field("phone")); }
+      if (!data.business) { return showError("Please select your business type.", field("business")); }
+      if (!data.state) { return showError("Please enter your state.", field("state")); }
+      if (!data.city) { return showError("Please enter your city.", field("city")); }
 
       // Disable button and show loading state
       submitBtn.disabled = true;
@@ -624,13 +620,11 @@
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({
-          email: val
-        })
+        body: JSON.stringify(data)
       })
         .then(function (res) {
           if (!res.ok) throw new Error("Request failed");
-          ctaMsg.textContent = "Thanks! We'll reach out to " + val + " to schedule your demo.";
+          ctaMsg.textContent = "Thanks " + data.name + "! We'll reach out to schedule your demo.";
           ctaMsg.classList.add("ok");
           ctaMsg.classList.remove("error");
           ctaForm.reset();

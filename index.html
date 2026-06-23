@@ -425,103 +425,94 @@
           </p>
         </div>
 
-        <div class="tabs" data-reveal>
-          <div class="tab-btns" role="tablist" aria-label="Solutions by team">
-            <button class="tab-btn is-active" role="tab" aria-selected="true" data-tab="finance">Finance</button>
-            <button class="tab-btn" role="tab" aria-selected="false" data-tab="sales">Sales &amp; CRM</button>
-            <button class="tab-btn" role="tab" aria-selected="false" data-tab="support">Support</button>
-            <button class="tab-btn" role="tab" aria-selected="false" data-tab="ops">HR &amp; Ops</button>
-          </div>
-
-          <div class="tab-panels">
-            <div class="tab-panel is-active" data-panel="finance">
-              <div class="tab-copy">
-                <h3>Close the books without the busywork</h3>
-                <p>Let AI handle invoice processing, reconciliation and approvals so finance can focus on strategy.</p>
-                <ul class="ticks">
-                  <li>Auto-process invoices &amp; receipts</li>
-                  <li>Reconcile transactions in real time</li>
-                  <li>Route expense approvals automatically</li>
-                  <li>Generate month-end reports on schedule</li>
-                </ul>
-              </div>
-              <div class="tab-visual">
-                <div class="mini-card">
-                  <div class="mini-row"><span>Invoice #2031</span><span class="tag green">Approved</span></div>
-                  <div class="mini-row"><span>Invoice #2032</span><span class="tag blue">Processing</span></div>
-                  <div class="mini-row"><span>Invoice #2033</span><span class="tag green">Approved</span></div>
-                  <div class="mini-bar"><i style="--w:84%"></i></div>
-                  <p class="mini-foot">84% processed automatically</p>
-                </div>
-              </div>
+        <div class="sol-bento" data-reveal>
+          <!-- Finance -->
+          <article class="sol-card" style="--c:#2b7fff; --c2:#5aa2ff;">
+            <div class="sol-head">
+              <span class="sol-ic"><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M6 2h12v20l-3-2-3 2-3-2-3 2z" />
+                  <path d="M9 8h6M9 12h6" />
+                </svg></span>
+              <span class="sol-meta"><span class="sol-dept">Finance</span><span class="sol-live"><i></i> Live</span></span>
             </div>
-
-            <div class="tab-panel" data-panel="sales">
-              <div class="tab-copy">
-                <h3>Keep your pipeline moving on autopilot</h3>
-                <p>Enrich leads, log activity and send timely follow-ups without lifting a finger.</p>
-                <ul class="ticks">
-                  <li>Auto-enrich new leads with firmographics</li>
-                  <li>Log calls, emails &amp; meetings to the CRM</li>
-                  <li>Trigger personalized follow-up sequences</li>
-                  <li>Update deal stages from real activity</li>
-                </ul>
-              </div>
-              <div class="tab-visual">
-                <div class="mini-card">
-                  <div class="mini-row"><span>New lead · Acme Inc.</span><span class="tag blue">Enriched</span></div>
-                  <div class="mini-row"><span>Follow-up sent</span><span class="tag green">Done</span></div>
-                  <div class="mini-row"><span>Deal moved → Demo</span><span class="tag green">Done</span></div>
-                  <div class="mini-bar"><i style="--w:71%"></i></div>
-                  <p class="mini-foot">71% faster lead response</p>
-                </div>
-              </div>
+            <h3>Close the books without the busywork</h3>
+            <p>AI runs invoice processing, reconciliation and approvals end-to-end.</p>
+            <div class="sv sv-fin">
+              <div class="sv-row" style="--d:.2s"><span>Invoice #2031</span><b class="sv-chk"></b></div>
+              <div class="sv-row" style="--d:.7s"><span>Invoice #2032</span><b class="sv-chk"></b></div>
+              <div class="sv-row" style="--d:1.2s"><span>Invoice #2033</span><b class="sv-chk"></b></div>
+              <div class="sv-bar"><i></i></div>
+              <span class="sv-cap">84% processed automatically</span>
             </div>
+          </article>
 
-            <div class="tab-panel" data-panel="support">
-              <div class="tab-copy">
-                <h3>Delight customers around the clock</h3>
-                <p>AI agents answer common questions instantly and hand off complex cases to your team.</p>
-                <ul class="ticks">
-                  <li>Resolve FAQs &amp; order status 24/7</li>
-                  <li>Auto-tag and prioritize tickets</li>
-                  <li>Draft replies in your brand voice</li>
-                  <li>Escalate edge cases with full context</li>
-                </ul>
-              </div>
-              <div class="tab-visual">
-                <div class="mini-card">
-                  <div class="mini-row"><span>Ticket #884 · Refund</span><span class="tag green">Resolved</span></div>
-                  <div class="mini-row"><span>Ticket #885 · Shipping</span><span class="tag green">Resolved</span></div>
-                  <div class="mini-row"><span>Ticket #886 · Billing</span><span class="tag amber">Escalated</span></div>
-                  <div class="mini-bar"><i style="--w:78%"></i></div>
-                  <p class="mini-foot">78% auto-resolved on first touch</p>
-                </div>
-              </div>
+          <!-- Sales & CRM -->
+          <article class="sol-card" style="--c:#0f9d77; --c2:#22c39a;">
+            <div class="sol-head">
+              <span class="sol-ic"><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 17l6-6 4 4 7-7" />
+                  <path d="M17 8h4v4" />
+                </svg></span>
+              <span class="sol-meta"><span class="sol-dept">Sales &amp; CRM</span><span class="sol-live"><i></i>
+                  Live</span></span>
             </div>
+            <h3>Keep your pipeline moving on autopilot</h3>
+            <p>Enrich leads, log activity and fire timely follow-ups automatically.</p>
+            <div class="sv sv-sales">
+              <div class="sv-bars">
+                <span style="--h:42%; --d:0s"></span>
+                <span style="--h:64%; --d:.25s"></span>
+                <span style="--h:82%; --d:.5s"></span>
+                <span style="--h:100%; --d:.75s" class="is-win"></span>
+              </div>
+              <div class="sv-labels"><i>Lead</i><i>Qual</i><i>Demo</i><i>Won</i></div>
+              <span class="sv-cap">71% faster lead response</span>
+            </div>
+          </article>
 
-            <div class="tab-panel" data-panel="ops">
-              <div class="tab-copy">
-                <h3>Onboard and operate effortlessly</h3>
-                <p>From new-hire paperwork to inventory updates, Autoniq runs the routine so people don't have to.</p>
-                <ul class="ticks">
-                  <li>Automate onboarding checklists</li>
-                  <li>Collect and file documents &amp; PTO</li>
-                  <li>Sync scheduling and inventory data</li>
-                  <li>Send reminders and status updates</li>
-                </ul>
-              </div>
-              <div class="tab-visual">
-                <div class="mini-card">
-                  <div class="mini-row"><span>Onboard · J. Rivera</span><span class="tag blue">In progress</span></div>
-                  <div class="mini-row"><span>Docs collected</span><span class="tag green">Done</span></div>
-                  <div class="mini-row"><span>Accounts provisioned</span><span class="tag green">Done</span></div>
-                  <div class="mini-bar"><i style="--w:90%"></i></div>
-                  <p class="mini-foot">90% of setup handled automatically</p>
-                </div>
-              </div>
+          <!-- Support -->
+          <article class="sol-card" style="--c:#7c5cff; --c2:#9b86ff;">
+            <div class="sol-head">
+              <span class="sol-ic"><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                </svg></span>
+              <span class="sol-meta"><span class="sol-dept">Support</span><span class="sol-live"><i></i> Live</span></span>
             </div>
-          </div>
+            <h3>Delight customers around the clock</h3>
+            <p>AI answers common questions instantly and escalates complex cases.</p>
+            <div class="sv sv-sup">
+              <div class="sv-row" style="--d:.2s"><span>Ticket #884 · Refund</span><b class="sv-badge">Resolved</b></div>
+              <div class="sv-row" style="--d:.7s"><span>Ticket #885 · Shipping</span><b class="sv-badge">Resolved</b>
+              </div>
+              <div class="sv-row" style="--d:1.2s"><span>Ticket #886 · Billing</span><b class="sv-badge">Resolved</b>
+              </div>
+              <span class="sv-cap">78% auto-resolved on first touch</span>
+            </div>
+          </article>
+
+          <!-- HR & Ops -->
+          <article class="sol-card" style="--c:#ef9038; --c2:#f7b65e;">
+            <div class="sol-head">
+              <span class="sol-ic"><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="9" cy="8" r="3" />
+                  <path d="M3 20a6 6 0 0 1 12 0" />
+                  <path d="M16 5.5a3 3 0 0 1 0 5.5M21.5 20a6 6 0 0 0-4.5-5.5" />
+                </svg></span>
+              <span class="sol-meta"><span class="sol-dept">HR &amp; Ops</span><span class="sol-live"><i></i>
+                  Live</span></span>
+            </div>
+            <h3>Onboard and operate effortlessly</h3>
+            <p>From new-hire paperwork to inventory updates, the routine runs itself.</p>
+            <div class="sv sv-hr">
+              <ul class="sv-check">
+                <li style="--d:.2s">Offer letter sent</li>
+                <li style="--d:.6s">Documents collected</li>
+                <li style="--d:1s">Accounts provisioned</li>
+                <li style="--d:1.4s">Welcome email scheduled</li>
+              </ul>
+              <span class="sv-cap">90% of setup handled automatically</span>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -535,53 +526,70 @@
           <p class="section-sub">Autoniq connects to your stack in minutes — no migration, no disruption.</p>
         </div>
 
-        <div class="flow-diagram" data-reveal aria-hidden="true">
-          <div class="flow-col flow-in">
-            <span class="flow-chip">Email</span>
-            <span class="flow-chip">CRM</span>
-            <span class="flow-chip">Sheets</span>
-          </div>
-          <div class="flow-wire">
-            <span class="flow-packet p1"></span>
-            <span class="flow-packet p2"></span>
-            <span class="flow-packet p3"></span>
-          </div>
-          <div class="flow-core">
-            <span class="core-ring"></span>
-            <span class="core-ring r2"></span>
-            <svg class="core-ic" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M13 2L4 14h7l-1 8 9-12h-7z" />
-            </svg>
-            <span class="core-label">AI Engine</span>
-          </div>
-          <div class="flow-wire">
-            <span class="flow-packet p1"></span>
-            <span class="flow-packet p2"></span>
-            <span class="flow-packet p3"></span>
-          </div>
-          <div class="flow-col flow-out">
-            <span class="flow-chip">Reports</span>
-            <span class="flow-chip">Alerts</span>
-            <span class="flow-chip">Tasks</span>
-          </div>
+        <div class="int-stack" data-reveal>
+          <article class="int-tile" style="--c:#611f69; --c2:#9b3ba5;">
+            <span class="int-logo">S</span>
+            <span class="int-info"><span class="int-name">Slack</span><span class="int-cat">Team chat</span></span>
+            <span class="int-status" aria-label="Connected"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10" /></svg></span>
+          </article>
+          <article class="int-tile" style="--c:#d93025; --c2:#ea6a5f;">
+            <span class="int-logo">M</span>
+            <span class="int-info"><span class="int-name">Gmail</span><span class="int-cat">Email</span></span>
+            <span class="int-status" aria-label="Connected"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10" /></svg></span>
+          </article>
+          <article class="int-tile" style="--c:#0f9d58; --c2:#34c46f;">
+            <span class="int-logo">Gs</span>
+            <span class="int-info"><span class="int-name">Sheets</span><span class="int-cat">Spreadsheets</span></span>
+            <span class="int-status" aria-label="Connected"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10" /></svg></span>
+          </article>
+          <article class="int-tile" style="--c:#0277bd; --c2:#00a1e0;">
+            <span class="int-logo">SF</span>
+            <span class="int-info"><span class="int-name">Salesforce</span><span class="int-cat">CRM</span></span>
+            <span class="int-status" aria-label="Connected"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10" /></svg></span>
+          </article>
+          <article class="int-tile" style="--c:#ff5c35; --c2:#ff8566;">
+            <span class="int-logo">H</span>
+            <span class="int-info"><span class="int-name">HubSpot</span><span class="int-cat">CRM &amp; marketing</span></span>
+            <span class="int-status" aria-label="Connected"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10" /></svg></span>
+          </article>
+          <article class="int-tile" style="--c:#2f2f2f; --c2:#5c5c5c;">
+            <span class="int-logo">N</span>
+            <span class="int-info"><span class="int-name">Notion</span><span class="int-cat">Docs &amp; wikis</span></span>
+            <span class="int-status" aria-label="Connected"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10" /></svg></span>
+          </article>
+          <article class="int-tile" style="--c:#2ca01c; --c2:#46c235;">
+            <span class="int-logo">qb</span>
+            <span class="int-info"><span class="int-name">QuickBooks</span><span class="int-cat">Accounting</span></span>
+            <span class="int-status" aria-label="Connected"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10" /></svg></span>
+          </article>
+          <article class="int-tile" style="--c:#0364b8; --c2:#0a84ff;">
+            <span class="int-logo">O</span>
+            <span class="int-info"><span class="int-name">Outlook</span><span class="int-cat">Email</span></span>
+            <span class="int-status" aria-label="Connected"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10" /></svg></span>
+          </article>
+          <article class="int-tile" style="--c:#5e8e3e; --c2:#95bf47;">
+            <span class="int-logo">Sh</span>
+            <span class="int-info"><span class="int-name">Shopify</span><span class="int-cat">E-commerce</span></span>
+            <span class="int-status" aria-label="Connected"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10" /></svg></span>
+          </article>
+          <article class="int-tile" style="--c:#635bff; --c2:#8a84ff;">
+            <span class="int-logo">St</span>
+            <span class="int-info"><span class="int-name">Stripe</span><span class="int-cat">Payments</span></span>
+            <span class="int-status" aria-label="Connected"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10" /></svg></span>
+          </article>
+          <article class="int-tile" style="--c:#ff4f00; --c2:#ff7a3d;">
+            <span class="int-logo">Z</span>
+            <span class="int-info"><span class="int-name">Zapier</span><span class="int-cat">Automation</span></span>
+            <span class="int-status" aria-label="Connected"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10" /></svg></span>
+          </article>
+          <article class="int-tile" style="--c:#4b53bc; --c2:#6264a7;">
+            <span class="int-logo">T</span>
+            <span class="int-info"><span class="int-name">Teams</span><span class="int-cat">Collaboration</span></span>
+            <span class="int-status" aria-label="Connected"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10" /></svg></span>
+          </article>
         </div>
-        <p class="flow-caption" data-reveal>Your tools feed in, Autoniq's AI engine decides &amp; acts, results flow
-          straight back out — automatically, 24/7.</p>
-
-        <div class="int-grid" data-reveal>
-          <span class="int-chip">Slack</span>
-          <span class="int-chip">Gmail</span>
-          <span class="int-chip">Sheets</span>
-          <span class="int-chip">Salesforce</span>
-          <span class="int-chip">HubSpot</span>
-          <span class="int-chip">Notion</span>
-          <span class="int-chip">QuickBooks</span>
-          <span class="int-chip">Outlook</span>
-          <span class="int-chip">Shopify</span>
-          <span class="int-chip">Stripe</span>
-          <span class="int-chip">Zapier</span>
-          <span class="int-chip">Teams</span>
-        </div>
+        <p class="flow-caption" data-reveal>Plus 50+ more apps via Zapier and our open API — and we'll build any
+          custom connector your team needs.</p>
       </div>
     </section>
 
@@ -778,8 +786,23 @@
         <p>We're opening a limited number of founding-partner pilot slots. Drop your email and we'll reach out to
           set up your free 14-day pilot — in under 30 minutes.</p>
         <form class="cta-form" id="ctaForm" novalidate>
-          <input type="email" name="email" placeholder="Enter your work email" aria-label="Work email" required />
-          <button type="submit" class="btn btn-primary btn-lg">Join early access</button>
+          <input type="text" name="name" placeholder="Full name" aria-label="Full name" autocomplete="name" required />
+          <input type="email" name="email" placeholder="Work email" aria-label="Work email" autocomplete="email" required />
+          <input type="tel" name="phone" placeholder="Contact number" aria-label="Contact number" autocomplete="tel" required />
+          <select name="business" aria-label="Business type" required>
+            <option value="" disabled selected>Business type</option>
+            <option value="Real estate">Real estate</option>
+            <option value="Hospital / Clinic">Hospital / Clinic</option>
+            <option value="E-commerce">E-commerce</option>
+            <option value="Agency">Agency</option>
+            <option value="Finance">Finance</option>
+            <option value="SaaS / Tech">SaaS / Tech</option>
+            <option value="Education">Education</option>
+            <option value="Other">Other</option>
+          </select>
+          <input type="text" name="state" placeholder="State" aria-label="State" autocomplete="address-level1" required />
+          <input type="text" name="city" placeholder="City" aria-label="City" autocomplete="address-level2" required />
+          <button type="submit" class="btn btn-primary btn-lg cta-submit">Join early access</button>
         </form>
         <p class="cta-fine" id="ctaMsg">No credit card required · 14-day pilot · Cancel anytime</p>
       </div>
